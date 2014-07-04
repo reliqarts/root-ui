@@ -1,0 +1,70 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: Utilities
+
+@import "global";
+
+
+@include define("utilities") {
+	/* Utilities */
+
+	//: Element Display
+	.block {
+		display: block;
+		&.center {
+			@include center-block;
+		}
+	}
+	.inline {
+		display: inline;
+	}
+	.inline-block {
+		display: inline-block;
+	}
+
+
+	//: Clearfix (cf)
+	//. Allows clearing previously floated elements.
+	.clearfix, .clr, .cf {
+		clear: both;
+		@include clearfix;
+	}
+
+
+	//: Floats
+	.float {
+		&.left {
+			float: left;
+		}
+		&.none {
+			float: none;
+		}
+		&.right {
+			float: right;
+		}
+	}
+
+
+	//: Text Alignment and Manipulation
+	.text {
+		&.center {
+			text-align: center;
+		}
+		&.joined {
+			letter-spacing: -.1em;
+		}
+		&.left {
+			text-align: left;
+		}
+		&.right {
+			text-align: right;
+		}
+	}
+
+	.lighten {
+		@include opacity(.8);
+	}
+
+}

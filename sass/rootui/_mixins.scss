@@ -1,0 +1,79 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: Mixins
+
+
+
+//: Define - (import once)
+//. Prevent elements from being loaded multiple times for compenents with dependencies.
+//. Use the "define" mixin to evoke this behaviour. 
+$elements: () !default;
+@mixin define($element) {
+  @if not (index($elements, $element)) {
+    $elements: append($elements, $element) !global;
+    @content;
+  }
+}
+
+// Box Sizing
+@mixin box-sizing($model: 'border-box') {
+  box-sizing: #{$model};
+  -moz-box-sizing: #{$model};
+  -webkit-box-sizing: #{$model};
+  -o-box-sizing: #{$model};
+}
+
+// Box Shadows
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  -o-box-shadow: $shadows;
+}
+
+// Clearfix
+@mixin clearfix {
+	* zoom: 1;
+  	&:after {
+    	content: "";
+	    display: block;
+	    height: 0;
+	    clear: both;
+		visibility: hidden;
+	}
+}
+
+// Center Block - Center a block element (default).
+@mixin center-block($vertical-margin: false, $horizontal-margin: auto, $width: auto) {
+	display: block;
+	@if $vertical-margin {
+		margin: $vertical-margin $horizontal-margin;
+	} @else {
+		margin-left: $horizontal-margin;
+		margin-right: $horizontal-margin;
+	}
+	width: $width;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Font Size
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calc-rem($size);
+}
+
+// Transitions
+@mixin transition($transition...) {
+  transition: $transition;
+  -moz-transition: $transition;
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+}

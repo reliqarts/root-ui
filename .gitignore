@@ -1,0 +1,12 @@
+*.DS_Store
+*.gem
+*.orig
+*.rbc
+*.rbenv-version
+*.ruby-version
+*.scssc
+*.sublime-*
+.config
+.sass-cache/*
+
+test/

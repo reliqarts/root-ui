@@ -1,0 +1,80 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: Type
+
+@import "global";
+
+//: Defaults
+$link-color:                #428bca !default;
+$link-color-hover:          darken($link-color, 15%) !default;
+$link-color-focus:          darken($link-color, 18%) !default;
+$link-decoration:           none !default;
+$link-decoration-hover:     underline !default;
+$link-decoration-focus:     none !default;
+
+$h1-font-reduction:         calc-rem(10) !default;
+$h2-font-reduction:         calc-rem(10) !default;
+$h3-font-reduction:         calc-rem(5) !default;
+$h4-font-reduction:         calc-rem(5) !default;
+$h5-font-reduction:         0 !default;
+$h6-font-reduction:         0 !default;
+
+$header-font-family:        $font-family-base !default;
+$header-font-weight:        $font-weight-normal !default;
+$header-font-style:         $font-style-normal !default;
+$header-font-color:         #222 !default;
+$header-line-height:        1.4 !default;
+$header-top-margin:         .2rem !default;
+$header-bottom-margin:      .5rem !default;
+$header-text-rendering:     optimizeLegibility !default;
+
+
+@include define("type") {
+
+    //: Anchor (link) base
+    a {
+      color: $link-color;
+      text-decoration: $link-decoration;
+      
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+        text-decoration: $link-decoration-hover;
+      }
+
+      &:focus {
+        color: $link-color-focus;
+        text-decoration: $link-decoration-focus;
+      }
+    }
+
+
+    //: Headings
+    /* Default header styles. */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $header-font-family;
+      font-weight: $header-font-weight;
+      font-style: $header-font-style;
+      color: $header-font-color;
+      text-rendering: $header-text-rendering;
+      margin-top: $header-top-margin;
+      margin-bottom: $header-bottom-margin;
+      line-height: $header-line-height;
+
+      small {
+        @include font-size($font-size-small);
+        color: $font-color-small;
+        line-height: 0;
+      }
+    }
+
+    h1 { @include font-size($h1-font-size); }
+    h2 { @include font-size ($h2-font-size - $h2-font-reduction); }
+    h3 { @include font-size ($h3-font-size - $h3-font-reduction); }
+    h4 { @include font-size ($h4-font-size - $h4-font-reduction); }
+    h5 { @include font-size ($h5-font-size - $h5-font-reduction); }
+    h6 { @include font-size ($h6-font-size - $h6-font-reduction); }
+
+}

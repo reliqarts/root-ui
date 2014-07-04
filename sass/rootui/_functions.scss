@@ -1,0 +1,31 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+
+$rem-base: 14px !default;
+
+
+// Strip-unit - Strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Clamp - Restrict number between min and max values. 
+// ie. ff value > max: max | if value < min: min
+@function clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+
+// Calculate element attribute percentage relative to parent. 
+@function calc-perc($target, $parent) {
+	@return ($target / $parent) * 100%;
+} 
+
+// Calculate rem size
+@function calc-rem($size) {
+  	$remSize: ( strip-unit($size) / strip-unit($rem-base) ) * 1rem;
+  	@if $remSize == 0rem { $remSize: 0; }
+  	@return $remSize;
+}

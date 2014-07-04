@@ -1,0 +1,52 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: Base
+
+@import "global";
+
+//: Defaults
+$body-bg:                   #fff !default; 
+$font-family-base:          'Helvetica Neue', 'Helvetica', Helvetica, Arial, Sans-Serif !default; 
+$font-size-base:            14px !default; 
+$line-height-base:          1.4 !default;
+
+$reset-box-sizing:          true !default;
+$font-color:                #333 !default;
+
+
+@include define("base") {
+
+    //: Reset the box-sizing on all elements
+    //.
+    //. Heads up! This reset may cause conflicts with some third-party widgets.
+    *, *:before, *:after {
+        @if $reset-box-sizing {
+            @include box-sizing(border-box);
+        }
+    }
+
+
+    //: Body reset
+    html {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    body {
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      color: $font-color;
+      background-color: $body-bg;
+    }
+
+
+    //: Input font reset
+    //. Reset fonts on input elements
+    input, button, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+}

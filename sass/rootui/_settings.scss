@@ -1,0 +1,161 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: Settings
+
+// Allow function usage in settings
+@import "rootui/functions";
+
+
+
+//: Colors
+//.
+//. Gray and brand colors for use across RootUI.
+
+$gray-darker:        	lighten(#000, 13.5%); // #222
+$gray-dark:             lighten(#000, 20%);   // #333
+$gray:                  lighten(#000, 33.5%); // #555
+$gray-light:            lighten(#000, 46.7%); // #777
+$gray-lighter:          lighten(#000, 93.5%); // #eee
+
+$brand-primary:         #428bca;
+$brand-secondary:       $gray;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+$primary-color: 		$brand-primary;
+$secondary-color: 		$brand-secondary;
+$knockout-color: 		teal;
+
+
+
+//: Base
+//.
+//. Settings for some of the most global styles.
+
+//- Whether box sizing should be set to border-box.
+// $reset-box-sizing: 	true;
+
+//-! Base rem (Root EM)
+//- Default html and body font-size for the base rem value.
+$rem-base: 					14px;
+
+//- Colors on '<body>'.
+//$body-bg:        			#fff;
+
+//- Global link color.
+// $link-color:      		$primary-color;
+// $link-color-hover:		darken($link-color, 15%);
+// $link-color-focus:		darken($link-color, 18%);
+// $link-decoration: 		none;
+// $link-decoration-hover: 	underline;
+// $link-decoration-focus: 	none;
+
+//- Active items (e.g., navs or dropdowns).
+$element-active-color:    	#fff;
+//- Global background color for active items (e.g., navs or dropdowns).
+$element-active-bg:       	$brand-primary;
+
+
+
+//: Element Common
+//.
+//. Common padding and border radius sizes and more. 
+//. Values based on rem-base text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     6px;
+$padding-base-horizontal:   12px;
+
+$padding-large-vertical:    10px;
+$padding-large-horizontal:  16px;
+
+$padding-small-vertical:    5px;
+$padding-small-horizontal:  10px;
+
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;
+
+$line-height-large:         1.33;
+$line-height-small:         1.5;
+
+$border-radius-base:        4px;
+$border-radius-large:       6px;
+$border-radius-small:       3px;
+
+
+
+//: Typography
+//.
+//. Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:	'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif:       	Georgia, 'Times New Roman', Times, serif;
+//- Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:		'Liberation Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-family-base:    		$font-family-sans-serif;
+
+$font-color:				$gray-dark;
+$font-color-small:			inherit;
+
+$font-size-base:      		$rem-base;
+$font-size-normal:			$font-size-base; 
+$font-size-small:      		ceil(($font-size-base * 0.85)); 	// ~12px
+$font-size-large:      		ceil(($font-size-base * 1.25)); 	// ~18px
+
+$font-style-italic:			italic;
+$font-style-normal:			normal;
+
+$font-weight-normal:		normal;
+$font-weight-bold:			bold;
+$font-weight-thin:			thin;
+
+$h1-font-size:       		floor(($font-size-base * 2.6)); 	// ~36px
+$h2-font-size:        		floor(($font-size-base * 2.15)); 	// ~30px
+$h3-font-size:        		ceil(($font-size-base * 1.7)); 		// ~24px
+$h4-font-size:        		ceil(($font-size-base * 1.25)); 	// ~18px
+$h5-font-size:        		$font-size-base;
+$h6-font-size:       		ceil(($font-size-base * 0.85)); 	// ~12px
+
+$h1-font-reduction: 		10;
+$h2-font-reduction: 		10;
+$h3-font-reduction: 		5;
+$h4-font-reduction: 		2;
+$h5-font-reduction: 		0;
+$h6-font-reduction: 		0;
+
+$header-font-family:        $font-family-base;
+$header-font-weight:        $font-weight-normal;
+$header-font-style:         $font-style-normal;
+$header-font-color:         #222 !default;
+$header-line-height:        1.4 !default;
+$header-top-margin:         .2rem !default;
+$header-bottom-margin:      .5rem !default;
+$header-text-rendering:     optimizeLegibility !default;
+
+//- Unit-less 'line-height' for use in components like buttons.
+$line-height-base:        	1.428571429; // 20/14
+//- Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    	floor(($font-size-base * $line-height-base)); // ~20px
+
+
+
+//: Code 
+//.
+//.	Styles for code input and display.
+
+$code-color:                  	#c7254e;
+$code-bg:                     	#f9f2f4;
+
+$kbd-color:                   	#fff;
+$kbd-bg:                      	#333;
+
+$pre-bg:                      	#f5f5f5;
+$pre-color:                   	$gray-dark;
+$pre-border-color:            	#ccc;
+$pre-scrollable-max-height:   	340px;
+
+//- Whether to include github.com style by Vasily Polovnyov.
+// $use-vasily-code:		false;
