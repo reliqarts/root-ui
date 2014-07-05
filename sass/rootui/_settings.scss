@@ -19,15 +19,15 @@ $gray:                  lighten(#000, 33.5%); // #555
 $gray-light:            lighten(#000, 46.7%); // #777
 $gray-lighter:          lighten(#000, 93.5%); // #eee
 
-$brand-primary:         #428bca;
-$brand-secondary:       $gray;
-$brand-success:         #5cb85c;
-$brand-info:            #5bc0de;
-$brand-warning:         #f0ad4e;
-$brand-danger:          #d9534f;
+$brand-primary-color: 	#428bca;
+$brand-secondary-color:	$gray;
+$brand-success-color:  	#5cb85c;
+$brand-info-color:     	#5bc0de;
+$brand-warning-color: 	#f0ad4e;
+$brand-danger-color:    #d9534f;
 
-$primary-color: 		$brand-primary;
-$secondary-color: 		$brand-secondary;
+$primary-color: 		$brand-primary-color;
+$secondary-color: 		$brand-secondary-color;
 $knockout-color: 		teal;
 
 
@@ -57,7 +57,7 @@ $rem-base: 					14px;
 //- Active items (e.g., navs or dropdowns).
 $element-active-color:    	#fff;
 //- Global background color for active items (e.g., navs or dropdowns).
-$element-active-bg:       	$brand-primary;
+$element-active-bg:       	$brand-primary-color;
 
 
 
@@ -112,13 +112,33 @@ $font-weight-normal:		normal;
 $font-weight-bold:			bold;
 $font-weight-thin:			thin;
 
-$h1-font-size:       		floor(($font-size-base * 2.6)); 	// ~36px
-$h2-font-size:        		floor(($font-size-base * 2.15)); 	// ~30px
-$h3-font-size:        		ceil(($font-size-base * 1.7)); 		// ~24px
-$h4-font-size:        		ceil(($font-size-base * 1.25)); 	// ~18px
-$h5-font-size:        		$font-size-base;
-$h6-font-size:       		ceil(($font-size-base * 0.85)); 	// ~12px
+// Used to control font-smoothing
+// $font-smoothing: 		antialiased;
 
+// Used to control text direction settings
+// $text-direction: 		ltr;
+// $opposite-direction: 	right;
+// $default-float: 			left;
+
+//- Header styles
+$header-font-family:        $font-family-base;
+$header-font-weight:        $font-weight-normal;
+$header-font-style:         $font-style-normal;
+$header-font-color:         #222;
+$header-line-height:        1.4;
+$header-top-margin:         .2rem;
+$header-bottom-margin:      .5rem;
+$header-text-rendering:     optimizeLegibility;
+
+//- Font sizes for headers
+$h1-font-size:       		floor((strip-unit($font-size-normal) * 2.6)) * 1px; 	// ~36px
+$h2-font-size:        		floor((strip-unit($font-size-normal) * 2.2)) * 1px; 	// ~30px
+$h3-font-size:        		ceil((strip-unit($font-size-normal) * 1.7))  * 1px; 	// ~24px
+$h4-font-size:        		ceil((strip-unit($font-size-normal) * 1.25)) * 1px; 	// ~18px
+$h5-font-size:        		strip-unit($font-size-normal) * 1px;	
+$h6-font-size:       		ceil((strip-unit($font-size-normal) * 0.85)) * 1px; 	// ~12px
+
+//- Header font reduction. To control header size reduction, eg. on small screens.
 $h1-font-reduction: 		10;
 $h2-font-reduction: 		10;
 $h3-font-reduction: 		5;
@@ -126,20 +146,68 @@ $h4-font-reduction: 		2;
 $h5-font-reduction: 		0;
 $h6-font-reduction: 		0;
 
-$header-font-family:        $font-family-base;
-$header-font-weight:        $font-weight-normal;
-$header-font-style:         $font-style-normal;
-$header-font-color:         #222 !default;
-$header-line-height:        1.4 !default;
-$header-top-margin:         .2rem !default;
-$header-bottom-margin:      .5rem !default;
-$header-text-rendering:     optimizeLegibility !default;
+// Whether font sizes should be reduced.
+$reduce-header-fonts:       false;
+
+//- These control how subheaders are styled.
+//$subheader-line-height:     1.4;
+//$subheader-font-color:      scale-color($header-font-color, $lightness: 35%);
+//$subheader-font-weight:     $font-weight-normal;
+//$subheader-top-margin:      .2rem;
+//$subheader-bottom-margin:   .5rem;
+
+//- Header underline
+//$header-underline-width:    1px;
+//$header-underline-style:    solid;
+//$header-underline-color:    lighten($header-font-color, 65%);
 
 //- Unit-less 'line-height' for use in components like buttons.
 $line-height-base:        	1.428571429; // 20/14
 //- Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-$line-height-computed:    	floor(($font-size-base * $line-height-base)); // ~20px
+$line-height-computed:    	floor(($font-size-normal * $line-height-base)); // ~20px
 
+//- Paragraph Styles
+$paragraph-font-family:       	inherit;
+$paragraph-font-weight:       	$font-weight-normal;
+$paragraph-font-size:         	$font-size-normal;
+$paragraph-line-height:       	1.6;
+$paragraph-margin-bottom:     	calc-rem(20);
+$paragraph-aside-font-size:   	calc-rem(14);
+$paragraph-aside-line-height: 	1.35;
+$paragraph-aside-font-style:  	italic;
+$paragraph-text-rendering:    	optimizeLegibility;
+
+//- We use these to style lists
+$list-font-family:              $paragraph-font-family;
+$list-font-size:                $paragraph-font-size;
+$list-line-height:              $paragraph-line-height;
+$list-margin-bottom:            $paragraph-margin-bottom;
+$list-style-position:           outside;
+$list-side-margin:              1.1rem;
+$list-ordered-side-margin:      1.4rem;
+$list-side-margin-no-bullet:    0;
+$list-nested-margin:            calc-rem(20);
+$definition-list-header-weight: $font-weight-bold;
+$definition-list-header-margin-bottom: .3rem;
+$definition-list-margin-bottom: calc-rem(12);
+
+//- We use these to style blockquotes
+//$blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
+//$blockquote-padding: calc-rem(9 20 0 19);
+//$blockquote-border: 1px solid #ddd;
+//$blockquote-cite-font-size: calc-rem(13);
+//$blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
+//$blockquote-cite-link-color: $blockquote-cite-font-color;
+
+//- Acronym styles
+$acronym-underline: 1px dotted lighten($brand-secondary-color, 15%);
+
+//- Cursor customization
+//$cursor-crosshair:			crosshair;
+//$cursor-default: 				default;
+//$cursor-pointer: 				pointer;
+//$cursor-help: 				help;
+//$cursor-text: 				text;
 
 
 //: Code 
@@ -148,6 +216,7 @@ $line-height-computed:    	floor(($font-size-base * $line-height-base)); // ~20p
 
 $code-color:                  	#c7254e;
 $code-bg:                     	#f9f2f4;
+$code-border-radius:            $border-radius-base;
 
 $kbd-color:                   	#fff;
 $kbd-bg:                      	#333;

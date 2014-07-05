@@ -10,6 +10,7 @@
 //: Defaults
 $code-color:                  #c7254e !default;
 $code-bg:                     #f9f2f4 !default;
+$code-border-radius:          $border-radius-base !default;
 
 $kbd-color:                   #fff !default;
 $kbd-bg:                      #333 !default;
@@ -35,7 +36,7 @@ $use-vasily-code:             false !default;
       font-size: 90%;
       color: $code-color;
       background-color: $code-bg;
-      border-radius: $border-radius-base;
+      border-radius: $code-border-radius;
     }
 
     // User input typically entered via keyboard.

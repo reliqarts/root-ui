@@ -1,8 +1,32 @@
-// Foundation by ZURB
-// foundation.zurb.com
-// Licensed under MIT Open Source
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
 
 //:: GLOBAL
 
 @import "../functions",	"../mixins"; 
 
+
+// We use this to control font-smoothing
+$font-smoothing: 		antialiased !default;
+
+// We use these to control text direction settings
+$text-direction: 		ltr !default;
+$default-float: 		left !default;
+$opposite-direction: 	right !default ;
+
+@if $text-direction == ltr {
+	$default-float: left !global;
+	$opposite-direction: right !global;
+} @else {
+	$default-float: right !global;
+	$opposite-direction: left !global;
+}
+
+// We use this as cursors values for enabling the option 
+// of having custom cursors in the whole site's stylesheet.
+$cursor-crosshair:		crosshair !default;
+$cursor-default: 		default !default;
+$cursor-pointer: 		pointer !default;
+$cursor-help: 			help !default;
+$cursor-text: 			text !default;

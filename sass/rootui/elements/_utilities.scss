@@ -9,6 +9,16 @@
 
 @include define("utilities") {
 	/* Utilities */
+	
+	//: Font smoothing
+    //. Antialiased font smoothing works best for light text on a dark background.
+    //. Apply to single elements instead of globally to body.
+    //. Note this only applies to webkit-based desktop browsers and Firefox 25 (and later) on the Mac.
+    .antialiased { 
+    	-webkit-font-smoothing: antialiased; 
+    	-moz-osx-font-smoothing: grayscale; 
+    }
+
 
 	//: Element Display
 	.block {
@@ -34,37 +44,54 @@
 
 
 	//: Floats
-	.float {
-		&.left {
-			float: left;
-		}
-		&.none {
-			float: none;
-		}
-		&.right {
-			float: right;
+	.left {
+		float: left;
+		&.float {
+			float: left !important;
 		}
 	}
-
+	.right {
+		float: right;
+		&.float {
+			float: right !important;
+		}
+	}
+	.no-float {
+		float: none !important;
+	}
+	
+	//: Visibility
+	.hide {
+		display: none;
+	}
+	.invisible {
+		visibility: hidden;
+	}
 
 	//: Text Alignment and Manipulation
-	.text {
-		&.center {
-			text-align: center;
-		}
-		&.joined {
-			letter-spacing: -.1em;
-		}
-		&.left {
-			text-align: left;
-		}
-		&.right {
-			text-align: right;
-		}
+	.text-center {
+		text-align: center;
+	}
+	.text-joined {
+		letter-spacing: -.1em;
+	}
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
+		text-align: right;
 	}
 
-	.lighten {
+	.light {
 		@include opacity(.8);
+	}
+
+	.lighter {
+		@include opacity(.61);
+	}
+
+	.lightest {
+		@include opacity(.45);
 	}
 
 }
