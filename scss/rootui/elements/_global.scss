@@ -1,0 +1,96 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: GLOBAL
+
+@import "../functions",	"../mixins"; 
+
+
+// We use this to control font-smoothing
+$font-smoothing: 		antialiased !default;
+
+// We use these to control text direction settings
+$text-direction: 		ltr !default;
+$default-float: 		left !default;
+$opposite-direction: 	right !default ;
+
+@if $text-direction == ltr {
+	$default-float: left !global;
+	$opposite-direction: right !global;
+} @else {
+	$default-float: right !global;
+	$opposite-direction: left !global;
+}
+
+// We use this as cursors values for enabling the option 
+// of having custom cursors in the whole site's stylesheet.
+$cursor-crosshair:		crosshair !default;
+$cursor-default: 		default !default;
+$cursor-pointer: 		pointer !default;
+$cursor-help: 			help !default;
+$cursor-text: 			text !default;
+
+// Use this as the default transition behaviour for utilities etc.
+$transition-default:	all .2s !default;
+
+
+// We use this to control whether or not CSS classes come through in the gem files.
+$include-html-classes: true !default;
+$include-print-styles: true !default;
+$include-html-global-classes: $include-html-classes !default;
+$include-html-base-classes: $include-html-global-classes !default;
+
+$column-gutter: calc-rem(30) !default;
+
+// We use this to control global border-box sizing.
+$reset-box-sizing:          true !default;
+
+// Media Query Ranges
+$small-range: (0em, 40em) !default;
+$medium-range: (40.063em, 64em) !default;
+$large-range: (64.063em, 90em) !default;
+$xlarge-range: (90.063em, 120em) !default;
+$xxlarge-range: (120.063em, 99999999em) !default;
+
+
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
+
+// Legacy
+$small: $medium-up;
+$medium: $medium-up;
+$large: $large-up;
+
+
+@include define("global") {
+	@if $include-html-global-classes {
+		
+		//: Reset the box-sizing on all elements
+        //.
+        //. Heads up! This reset may cause conflicts with some third-party widgets.
+        *, *:before, *:after {
+            @if $reset-box-sizing {
+                @include box-sizing(border-box);
+            }
+        }
+
+	}
+}

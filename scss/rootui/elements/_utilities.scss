@@ -68,6 +68,10 @@
 		visibility: hidden;
 	}
 
+	.trans {
+		@include transition($transition-default);
+	}
+
 	//: Text Alignment and Manipulation
 	.text-center {
 		text-align: center;
