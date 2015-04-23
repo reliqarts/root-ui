@@ -1,5 +1,5 @@
 /**
- *	RootUI v0.1 (http://reliqarts.com)
+ *	RootUI v0.4.3 (http://reliqarts.com)
  *	Copyright 2014 ReliQ Arts, Inc.
  * 	@author	:	Patrick Reid - @IAmReliQ
  * 	@link	:	www.reliqarts.com
@@ -11,20 +11,27 @@
 
 
 //: Settings
-@import "rootui/settings";
+@import "rootui_settings";
 
 
 //: Dependencies
-@import 'normalize';
+@import 'compass/css3';
+		// 'normalize'; // optional
 
 
 //: Elements - "Behold, the elements..."
 @import 
 	"rootui/elements/base",
 	"rootui/elements/type",
+	"rootui/elements/alerts",
 	"rootui/elements/code",
+	"rootui/elements/buttons",
+	"rootui/elements/form",
+	"rootui/elements/table",
+	"rootui/elements/navbar",
+	"rootui/elements/tabs",
 	"rootui/elements/utilities";
 
-// Optional
-// "rootui/elements/grid",
-// "rootui/elements/buttons",
+
+// Optional Future
+// "rootui/elements/grid"

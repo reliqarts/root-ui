@@ -1,0 +1,53 @@
+// RootUI by ReliQ Arts
+// rootui.reliqarts.com
+// Licensed under MIT Open Source
+
+//:: Table
+
+@import "global";
+
+
+@include define("table") {
+	/* Table */
+	
+	table {
+		background: transparent;
+		clear: both;
+		margin-bottom: 20px;
+		width: 100%;
+
+		a {
+			&:hover, &:focus {
+				text-decoration: none;
+			}
+			
+			&:not(.btn) {
+				&.success, &.info, &.danger, &.error, &.cancel, &.primary, &.secondary, &.knockout {
+					padding: 0 4px;
+				}
+			}
+		}
+
+		tr {
+			td {
+				ul {
+					&.inline-list {
+						margin: 0;
+
+						li {
+							margin-left: 0;
+
+							&:not(:last-child) {
+								&:after {
+									content: ", ";
+									display: inline;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

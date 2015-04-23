@@ -69,9 +69,9 @@ $rem-base: 					14px;
 // $link-decoration-focus: 	none;
 
 //- Active items (e.g., navs or dropdowns).
-$element-active-color:    	#fff;
+$element-active-color:    	$primary-color;
 //- Global background color for active items (e.g., navs or dropdowns).
-$element-active-bg:       	$brand-primary-color;
+$element-active-bg:       	$gray-dark;
 
 
 
@@ -285,3 +285,19 @@ $definition-list-margin-bottom: calc-rem(12);
 // $small: $medium-up;
 // $medium: $medium-up;
 // $large: $large-up;
+
+
+
+//: Form
+//.
+//.	Styles for form display. 
+
+// $oneblock-height:              	40px;
+
+
+
+//: Navigation
+//.
+//.	Styles for navigation display. 
+
+// $topbar-color:						$gray-dark;

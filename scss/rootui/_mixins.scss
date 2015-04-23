@@ -12,7 +12,7 @@
 $elements: () !default;
 @mixin define($element) {
   @if not (index($elements, $element)) {
-    $elements: append($elements, $element) !global;
+    $elements: append($elements, $element); // !global;
     @content;
   }
 }

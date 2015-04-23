@@ -175,6 +175,74 @@ $align-class-breakpoints:
                 color: $link-color-focus;
                 text-decoration: $link-decoration-focus;
             }
+
+            &.primary, &.btn-primary {
+                color: $primary-color;
+
+                &:hover {
+                    color: lighten($primary-color, 10%);
+                }
+            }
+
+            &.secondary, &.btn-secondary {
+                color: $secondary-color;
+
+                &:hover {
+                    color: lighten($secondary-color, 10%);
+                }
+            }
+
+            &.knockout, &.btn-knockout {
+                color: $knockout-color;
+
+                &:hover {
+                    color: lighten($knockout-color, 10%);
+                }
+            }
+
+            &.success, &.btn-success {
+                color: $brand-success-color;
+
+                &:hover {
+                    color: lighten($brand-success-color, 10%);
+                }
+            }
+
+            &.info, &.btn-info {
+                color: $brand-info-color;
+
+                &:hover {
+                    color: lighten($brand-info-color, 10%);
+                }
+            }
+
+            &.warning, &.btn-warning {
+                color: $brand-warning-color;
+
+                &:hover {
+                    color: lighten($brand-warning-color, 10%);
+                }
+            }
+
+            &.danger, &.btn-danger, &.error, &.btn-error {
+                color: $brand-danger-color;
+
+                &:hover {
+                    color: lighten($brand-danger-color, 10%);
+                }
+            }
+
+            &.radius {
+                border-radius: 3px;
+            }
+
+            &.round {
+                border-radius: 50%;
+            }
+
+            &.nd, &.no-decoration, &.no-underline {
+                text-decoration: none;
+            }
         }
 
         // Headings
@@ -330,6 +398,18 @@ $align-class-breakpoints:
             &.unstyled {
                 margin-#{$default-float}: 0;
                 padding: 0;
+            }
+
+            &.inline {
+                li {
+                    display: inline;
+                }
+            }
+
+            &.inline-block {
+                li {
+                    display: inline-block;
+                }
             }
         }
 

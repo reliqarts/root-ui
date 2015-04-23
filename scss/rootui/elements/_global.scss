@@ -13,14 +13,14 @@ $font-smoothing: 		antialiased !default;
 // We use these to control text direction settings
 $text-direction: 		ltr !default;
 $default-float: 		left !default;
-$opposite-direction: 	right !default ;
+$opposite-direction: 	right !default;
 
 @if $text-direction == ltr {
-	$default-float: left !global;
-	$opposite-direction: right !global;
+	$default-float: left !default;
+	$opposite-direction: right !default;
 } @else {
-	$default-float: right !global;
-	$opposite-direction: left !global;
+	$default-float: right !default;
+	$opposite-direction: left !default;
 }
 
 // We use this as cursors values for enabling the option 

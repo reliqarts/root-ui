@@ -33,8 +33,12 @@ $body-font-color:           $font-color;
             cursor: $cursor-default;
             font-family: $font-family-base;
             font-size: $font-size-base;
+            font-style: normal;
+            font-weight: normal;
             font-smoothing: $font-smoothing;
             line-height: $line-height-base;
+            margin: 0;
+            padding: 0;
             text-direction: $text-direction;
         }
 

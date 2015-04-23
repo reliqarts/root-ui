@@ -12,6 +12,164 @@
 	
 	button, .btn {
 		
+		background: rgba($gray, .3);
+		border: 1px solid rgba($knockout-color, .13);
+		border-radius: 0;
+		color: $knockout-color;
+		@include box-shadow(0px 0px 0 0 rgba($gray, .3)); 
+		padding: 5px 8px;
+		font-size: 80%;
+
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+			background: rgba($knockout-color, .6);
+		}
+
+		&.primary, &.btn-primary {
+			background: $primary-color;
+			border-color: darken($primary-color, 2%);
+			font-weight: bold;
+			color: #fff;
+
+			&:hover {
+				background: lighten($primary-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.secondary, &.btn-secondary {
+			background: $secondary-color;
+			border-color: darken($secondary-color, 12%);
+			font-weight: bold;
+			color: #fff; 
+
+			&:hover {
+				background: lighten($secondary-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.knockout, &.btn-knockout {
+			background: $knockout-color;
+			border-color: darken($knockout-color, 12%);
+			font-weight: bold;
+			color: #fff; 
+
+			&:hover {
+				background: lighten($knockout-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.success, &.btn-success {
+			background: $brand-success-color;
+			border-color: darken($brand-success-color, 12%);
+			font-weight: bold;
+			color: #fff; 
+
+			&:hover {
+				background: lighten($brand-success-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.info, &.btn-info {
+			background: $brand-info-color;
+			border-color: darken($brand-info-color, 12%);
+			font-weight: bold;
+			color: #fff; 
+
+			&:hover {
+				background: lighten($brand-info-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.warning, &.btn-warning {
+			background: $brand-warning-color;
+			border-color: darken($brand-warning-color, 12%);
+			font-weight: bold;
+			color: #fff; 
+
+			&:hover {
+				background: lighten($brand-warning-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.danger, &.btn-danger, &.error, &.btn-error, &.cancel, &.btn-cancel {
+			background: $brand-danger-color;
+			border-color: rgba($brand-danger-color, .12);
+			font-weight: bold;
+			color: #fff; 
+
+			&:hover {
+				background: lighten($brand-danger-color, 10%);
+				color: #fff;
+			}
+		}
+
+		&.radius {
+			border-radius: 3px;
+		}
+
+		&.round {
+			border-radius: 50%;
+		}
+
+	}
+
+	.action-btn, a.action-btn {
+		
+		background: rgba($gray, .3);
+		border: 1px solid $gray;
+		color: $gray;
+		@include box-shadow(2px 2px 0 0 $gray); 
+		font-weight: bold;
+		font-size: 80%;
+		padding: 5px 8px;
+		@include transition(all .2s);
+
+		&:hover {
+			text-decoration: none;
+		}
+		
+		&.primary {
+			background: $primary-color;
+			border-color: darken($primary-color, 12%);
+			@include box-shadow(2px 2px 0 0 darken($primary-color, 12%)); 
+			color: #fff;
+
+			&:hover {
+				background: lighten($primary-color, 10%);
+				@include box-shadow(2px 2px 0 0 rgba(darken($primary-color, 12%), .3));
+			}
+		}
+
+		&.secondary {
+			background: $secondary-color;
+			border-color: darken($secondary-color, 12%);
+			@include box-shadow(2px 2px 0 0 darken($secondary-color, 12%));
+			color: #fff; 
+
+			&:hover {
+				background: lighten($secondary-color, 10%);
+				@include box-shadow(2px 2px 0 0 rgba(darken($secondary-color, 12%), .3));
+			}
+		}
+
+		&.knockout {
+			background: $knockout-color;
+			border-color: darken($knockout-color, 12%);
+			@include box-shadow(2px 2px 0 0 darken($knockout-color, 12%));
+			color: #fff; 
+
+			&:hover {
+				background: lighten($knockout-color, 10%);
+				@include box-shadow(2px 2px 0 0 rgba(darken($knockout-color, 12%), .3));
+			}
+		}
 	}
 
 }

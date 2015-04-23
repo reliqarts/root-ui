@@ -60,6 +60,14 @@
 		float: none !important;
 	}
 	
+	.no-margin, .no-marg {
+		margin: 0 !important;
+	}
+
+	.no-padding, .no-pad {
+		padding: 0 !important;
+	}
+	
 	//: Visibility
 	.hide {
 		display: none;
@@ -73,16 +81,19 @@
 	}
 
 	//: Text Alignment and Manipulation
-	.text-center {
+	.txt-center {
 		text-align: center;
 	}
-	.text-joined {
+	.txt-joined {
 		letter-spacing: -.1em;
 	}
-	.text-left {
+	.txt-left {
 		text-align: left;
 	}
-	.text-right {
+	.txt-justify {
+		text-align: justify;
+	}
+	 .txt-right {
 		text-align: right;
 	}
 
@@ -96,6 +107,30 @@
 
 	.lightest {
 		@include opacity(.45);
+	}
+
+	//: Overlay
+	.carpet {
+		height: 100%;
+		overflow: hidden;
+		position: absolute !important;
+		top: 0; 
+		width: 100%;
+		z-index: 0;
+
+		img, video {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		.shade {
+			background: rgba(#000,.6);
+			display: block;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;		}
 	}
 
 }

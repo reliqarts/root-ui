@@ -1,0 +1,376 @@
+//* RootUI by ReliQ Arts
+//* rootui.reliqarts.com
+//* Licensed under MIT Open Source
+
+//:: Navbar
+
+@import "global";
+
+
+//: Defaults
+$topbar-color:	$gray-dark !default;
+
+
+@include define("navbar") {
+
+	.navi, .navbar, .barnav {
+		border-bottom: 1px dashed rgba($gray-light, .052);
+		margin-bottom: 0;
+		min-height: auto;
+		position: relative;
+		@include clearfix();
+
+		ul {
+			
+			li {
+				
+				a {
+					display: block;
+					padding: 5px;
+					text-decoration: none;
+					@include transition(all .25s);
+				}
+
+				&.active {
+					> a {
+						background-color: transparent;
+						color: $secondary-color;
+						cursor: default;
+						
+						&:focus {
+							background-color: transparent;
+						}
+
+						&:hover {
+							background-color: transparent;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+
+			&.dropdown, &.dropdown-menu {
+				border-radius: 0;
+
+				li {
+					
+					a {
+						border: none;
+						white-space: nowrap;
+					}
+
+					&.divider {
+						display: none;
+					}
+
+					&:not(:last-child) {
+						border-bottom: 1px dashed rgba($knockout-color, .73);
+					}
+				}
+
+				&.open {
+					display: block;
+				}
+			}
+
+			&.pagination {
+				display: inline-block; 
+				padding-left: 0; 
+				margin: 20px 0; 
+				border-radius: 4px;
+
+				> li {
+					display: inline;
+					float: none;
+
+					> a, > span {
+						background-color: #fff; 
+						border: 1px solid #efefef; 
+						position: relative; 
+						float: left; 
+						padding: 2px 7px; 
+						margin-left: -1px; 
+						line-height: 1.42857143; 
+						color: #428bca; 
+						text-decoration: none;
+					}
+
+					&:first-child {
+						> a, > span {
+							margin-left: 0; 
+							border-top-left-radius: 4px; 
+							border-bottom-left-radius: 4px;
+						}
+					}
+
+					&:last-child {
+						> a, > span {
+							border-top-right-radius: 4px; 
+							border-bottom-right-radius: 4px;
+						}
+					}
+
+					> a:hover,	> span:hover,	> a:focus,	> span:focus {
+						background-color: rgba($primary-color, .5); // rgba(211,188,159,1); 
+						border-color: rgba($primary-color, .4); //rgba(211,188,159,1); 
+						color: #ffffff;
+					}
+				}
+
+				> .active {
+					> a, > span, a:hover, span:hover, > a:focus, > span:focus {
+						background-color: rgba($knockout-color, .5); 
+						border-color: rgba($knockout-color, .1235);
+						color: #fff; 
+						cursor: default; 
+						z-index: 2; 
+					}
+				} 
+
+				> .disabled {
+					> span, > span:hover, > span:focus, > a, > a:hover, > a:focus {
+						background-color: #fff; 
+						border-color: #eee; 
+						color: #999; 
+						cursor: not-allowed;
+					}
+				}
+			}
+
+			.dropdown-toggle {
+				&.active ~ .dropdown-menu {
+					display: block;
+				}
+			}
+
+		}
+
+		&.no-float, &.spacey {
+			ul {
+				li {
+					a, span {
+						display: inline-block;
+						float: none;
+					}
+				}
+			}
+		}
+
+		&.top-bar {
+			background: $topbar-color;
+			height: 2.8225rem;
+			
+			.top-bar-section {
+				ul {
+					li {
+						background: inherit;
+
+						& > a {
+							background-color: transparent;
+							font-size: 0.9225rem;
+
+							&:hover {
+								color: $secondary-color;
+							}
+						}
+
+						&.active {
+							> a {
+								background-color: $topbar-color;
+								color: $primary-color;
+								cursor: default;
+								
+								&:focus {
+									background-color: transparent;
+								}
+
+								&:hover {
+									background-color: transparent;
+									color: saturate($primary-color, 5%);
+								}
+							}
+						}
+
+						&:not(.has-form) {
+							a:not(.button) {
+								background: $topbar-color;
+
+								&:hover {
+									color: $secondary-color;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.expanded {
+				height: auto;
+
+				.title-area {
+					background: transparent;
+				}
+			}
+		}
+		
+		&:not(.top-bar) {
+			ul {
+				&:not(.pagination) {
+					display: inline;
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+
+					li {
+						display: block;
+						float: left;
+						position: relative;
+
+						&.has-dropdown {
+							&:hover {
+								> ul {
+									display: block;
+								}
+							}
+						}
+					}
+
+					&.right {
+						&.dropdown, .dropdown-menu {
+							left: auto;
+							right: 0;
+						}
+					}
+
+					&.dropdown, &.dropdown-menu {
+						display: none;
+						left: 0; 
+						min-width: 140px;
+						position: absolute;
+						vertical-align: top;
+						z-index: 3;
+						top: 33px;
+
+						li {
+							display: block;
+							width: 100%;
+						}
+					}
+				}
+
+				&.no-float {
+					li {
+						float: none;
+					}
+				}
+			}
+		}
+
+		&.text-right, &.text-center {
+			ul {
+				li {
+					float: none !important;
+				}
+			}
+		}
+
+		&.adminnav {
+			@include background-image(linear-gradient(darken($knockout-color, 6%), #000));
+			@include box-shadow(0 0 5px 0 rgba(#000, .5));
+			color: #eee;
+			z-index: 3;
+			
+			ul, .topbar-section ul {
+				background: inherit;
+				
+				li:not(.name):not(.toggle-topbar), li:not(.name):not(.toggle-topbar):not(.has-form) {
+
+					a, a:not(.button) {
+						background-color: transparent;
+						border-right: 1px solid rgba($knockout-color, 0.52);
+						color: #dedede;
+
+						&:hover {
+							background-color: rgba($primary-color, .8); 
+							color: #fff;
+							text-decoration: none;
+
+							&[href="#"] {
+								cursor: default;
+							}
+						}
+
+						&.dropdown-toggle {
+							&:hover {
+								background-color: rgba($primary-color, .3);
+							}
+						}
+					}
+
+					&.active {
+						> a {
+							color: $secondary-color;
+
+							&:hover {
+								background-color: transparent;
+								color: $secondary-color;
+							}
+						}
+					}
+
+					&:last-child {
+						a {
+							border: none;
+						}
+					}
+				}
+
+				&.dropdown, &.dropdown-menu {
+					background-color: rgba(#000, .84);
+					@include box-shadow(0 0 5px 0 rgba(#000, .5));
+
+					a {
+						border: none;
+					}
+				}
+			}
+
+			ul.title-area {
+				li {
+					&.name {
+						a {
+							cursor: default;
+							@include opacity(.6);
+						}
+					}
+				}
+			}
+
+			&.top-bar {
+				&.expanded {
+					.title-area {
+						background-color: $gray-dark;
+					}
+				}
+			}
+		}
+		
+		&.util, &.utility, &.utilities, &.util-nav {
+			margin-bottom: 10px;
+
+			ul {
+				a {
+					border: 1px solid transparent;
+
+					&:hover {
+						border-color: rgba($knockout-color, .0512);
+						text-decoration: none;
+					}
+
+				}
+			}
+		}
+
+	}
+
+}
