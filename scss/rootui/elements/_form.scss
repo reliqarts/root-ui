@@ -188,7 +188,7 @@ $oneblock-height: 40px !default;
 			// 	width: auto;
 			// }
 
-			input {
+			input, select, .select2-container {
 				background: #f5f5f5;
 				border: none;
 				@include box-shadow(0 0 3px 0 rgba(#000, .02));
@@ -220,6 +220,50 @@ $oneblock-height: 40px !default;
 						background-color: $primary-color;
 					}
 				}
+
+				&.select2-container {
+					padding: 0;
+
+					.select2-selection {
+						background: transparent;
+						border: none;
+						@include border-radius(0);
+						height: $oneblock-height;
+
+						.select2-selection__rendered {
+							overflow: auto;
+							height: 100%;
+							position: relative;
+							@include clearfix;
+
+							.select2-search--inline {
+								.select2-search__field {
+									margin: 0 -5px;
+								}
+							}
+
+							.select2-selection__choice {
+								background: $primary-color;
+								border-color: darken($primary-color, 9%);
+								@include border-radius(3px);
+								color: #fff;
+								display: inline-block;
+								position: relative;
+								font-family: $font-family-base;
+								font-weight: bold;
+								margin-top: 8px;
+
+								.select2-selection__choice__remove {
+									color: inherit;
+								}
+							}
+
+							.select2-selection__clear {
+								margin-top: 8px;
+							}
+						}
+					}
+				}
 			}
 
 			label {
@@ -239,37 +283,57 @@ $oneblock-height: 40px !default;
 			}
 		} 
 
-		.switch {
-			input {
-				&:checked {
-					+ label {
-						background-color: saturate($secondary-color, 25%);
-					}
-				}
+		.v-space {
+			padding: .265rem 0;
+		}
+	}
 
-				&[disabled] {
-					+ label {
-						background-color: saturate(lighten($gray_light, 15%), 10%);
-						cursor: not-allowed;
-					}
+	.switch {
+		input {
+			&:checked {
+				+ label {
+					background-color: saturate($secondary-color, 25%);
 				}
 			}
 
-			label {
-				background: lighten($gray_light, 25%);
-			}
-
-			&.inline {
-				
-				~ label.inline {
-					vertical-align: top;
-					margin-left: 3px;
+			&[disabled] {
+				+ label {
+					background-color: saturate(lighten($gray_light, 15%), 10%);
+					cursor: not-allowed;
 				}
 			}
 		}
 
-		.v-space {
-			padding: .265rem 0;
+		label {
+			background: lighten($gray_light, 25%);
+		}
+
+		&.inline {
+			
+			~ label.inline {
+				vertical-align: top;
+				margin-left: 3px;
+			}
+		}
+		
+		&.radius {
+			.switch-paddle {
+				@include border-radius( 4px );
+
+				&:after {
+					@include border-radius( 4px );
+				}
+			}
+		}
+
+		&.round {
+			.switch-paddle {
+				@include border-radius( 2rem );
+
+				&:after {
+					@include border-radius( 2rem );
+				}
+			}
 		}
 	}
 

@@ -11,36 +11,36 @@
 //. Use the "define" mixin to evoke this behaviour. 
 $elements: () !default;
 @mixin define($element) {
-  @if not (index($elements, $element)) {
-    $elements: append($elements, $element); // !global;
-    @content;
-  }
+	@if not (index($elements, $element)) {
+		$elements: append($elements, $element); // !global;
+		@content;
+	}
 }
 
 // Box Sizing
 @mixin box-sizing($model: 'border-box') {
-  box-sizing: #{$model};
-  -moz-box-sizing: #{$model};
-  -webkit-box-sizing: #{$model};
-  -o-box-sizing: #{$model};
+	box-sizing: #{$model};
+	-moz-box-sizing: #{$model};
+	-webkit-box-sizing: #{$model};
+	-o-box-sizing: #{$model};
 }
 
 // Box Shadows
 @mixin box-shadow($shadows...) {
-  box-shadow: $shadows;
-  -moz-box-shadow: $shadows;
-  -webkit-box-shadow: $shadows;
-  -o-box-shadow: $shadows;
+	box-shadow: $shadows;
+	-moz-box-shadow: $shadows;
+	-webkit-box-shadow: $shadows;
+	-o-box-shadow: $shadows;
 }
 
 // Clearfix
 @mixin clearfix {
 	* zoom: 1;
-  	&:after {
-    	content: "";
-	    display: block;
-	    height: 0;
-	    clear: both;
+		&:after {
+			content: "";
+			display: block;
+			height: 0;
+			clear: both;
 		visibility: hidden;
 	}
 }
@@ -59,21 +59,21 @@ $elements: () !default;
 
 // Opacity
 @mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
 }
 
 // Font Size
 @mixin font-size($size) {
-  font-size: $size;
-  font-size: calc-rem($size);
+	font-size: $size;
+	font-size: calc-rem($size);
 }
 
 // Transitions
 @mixin transition($transition...) {
-  transition: $transition;
-  -moz-transition: $transition;
-  -webkit-transition: $transition;
-  -o-transition: $transition;
+	transition: $transition;
+	-moz-transition: $transition;
+	-webkit-transition: $transition;
+	-o-transition: $transition;
 }

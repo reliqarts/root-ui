@@ -14,22 +14,34 @@
 			border-bottom: 1px solid rgba(#fff, .5);
 			list-style-type: none;
 
-			li, dd, .tab-title {
+			li, dd, .tab-title, .tabs-title {
 				display: inline;
 				margin: 0;
 				padding: 0;
 
 				a {
 					background-color: transparent;
+					@include border-radius( 3px 3px 0 0 );
 					display: block;
 					float: left;
 					padding: 10px;
 					text-decoration: none;
 				}
 
-				&.active {
+				> a {
+					border-top: 1px solid transparent;
+					color: $gray;
+					font-size: 1rem;
+				}
+
+				&.active , &.is-active{
 					a {
 						background-color: rgba(#fff, .5);
+					}
+
+					> a {
+						border-color: rgba($secondary-color, .58);
+						color: $secondary-color;
 					}
 				}
 			} 
@@ -38,10 +50,10 @@
 
 	.tabs-content, .tab-content {
 		border: solid rgba(#fff, .35);
-		border-radius: 0 0 3px 3px;
+		@include border-radius( 0 0 3px 3px );
 		border-width: 0 1px 1px;
 		margin-bottom: 1.4rem;
-		padding: 5px 10px;
+		// padding: 5px 10px;
 		width: 100%;
 	}
 
