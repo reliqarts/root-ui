@@ -1,0 +1,29 @@
+{
+	"name": "root-ui",
+	"homepage": "https://github.com/ReliQArts/Root-UI",
+	"authors": [
+		"ReliQ <reliq@reliqarts.com>"
+	],
+	"description": "A beautiful yet simple CSS3 Pseudo-Framework.",
+	"main": "dist/css/rootui.css",
+	"moduleType": [],
+	"keywords": [
+		"ui",
+		"user",
+		"interface",
+		"basic",
+		"root",
+		"framework",
+		"psuedo",
+		"bootstrap",
+		"foundation"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
