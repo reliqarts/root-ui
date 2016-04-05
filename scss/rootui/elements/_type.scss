@@ -33,12 +33,12 @@ $header-underline-style:    solid !default;
 $header-underline-color:    lighten($header-font-color, 65%) !default;
 
 // Header font sizes
-$h1-font-size:              floor((strip-unit($font-size-normal) * 2.6)) * 1px;     // ~36px
-$h2-font-size:              floor((strip-unit($font-size-normal) * 2.2)) * 1px;     // ~30px
-$h3-font-size:              ceil((strip-unit($font-size-normal) * 1.7))  * 1px;     // ~24px
-$h4-font-size:              ceil((strip-unit($font-size-normal) * 1.25)) * 1px;     // ~18px
-$h5-font-size:              strip-unit($font-size-normal) * 1px;    
-$h6-font-size:              ceil((strip-unit($font-size-normal) * 0.85)) * 1px;     // ~12px
+$h1-font-size:              floor((strip-unit($font-size-normal) * 2.6)) * 1px !default;     // ~36px
+$h2-font-size:              floor((strip-unit($font-size-normal) * 2.2)) * 1px !default;     // ~30px
+$h3-font-size:              ceil((strip-unit($font-size-normal) * 1.7))  * 1px !default;     // ~24px
+$h4-font-size:              ceil((strip-unit($font-size-normal) * 1.25)) * 1px !default;     // ~18px
+$h5-font-size:              strip-unit($font-size-normal) * 1px !default;    
+$h6-font-size:              ceil((strip-unit($font-size-normal) * 0.85)) * 1px !default;     // ~12px
 
 // Header font reduction. To control header size reduction, eg. on small screens.
 $h1-font-reduction:         calc-rem(10) !default;
