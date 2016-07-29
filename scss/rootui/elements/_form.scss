@@ -321,7 +321,7 @@ $oneblock-height: 40px !default;
 		@extend %input-special;
 		@extend %select2-basic;
 		// margin: 0 0 1rem;
-		width: 100%;
+		width: auto;
 
 		.select2-selection {
 			@extend input[type="text"];
