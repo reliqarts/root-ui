@@ -108,8 +108,9 @@ $oneblock-height: 40px !default;
 			width: 100%;
 
 			&:focus {
-				box-shadow: 0 0 3px 0 rgba($knockout-color, .12);
-			}
+				border-color: rgba($secondary-color, .235);
+				@include box-shadow(0 0 3px 0 rgba($knockout-color, .05));
+				outline: none;			}
 		}
 
 		&[type="submit"], &[type="reset"] {
