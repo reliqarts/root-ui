@@ -65,81 +65,45 @@ $oneblock-height: 40px !default;
 	}
 }
 
+%form-internals {
+	font-family: 'Roboto', Sans-Serif;
 
-@include define("form") {
-	/* Form */
-	
-	form {
+	fieldset {
+		border: 1px solid rgba($knockout-color, 0.14); 
+		border-radius: 5px;
 
+		legend {
+			background: transparent;
+		}
+	}
+
+	label {
+		display: block;
 		font-family: 'Roboto', Sans-Serif;
+		font-size: .9rem;
+		font-weight: bold;
+		line-height: 1.5;
+		margin-bottom: 5px;
 
-		fieldset {
-			border: 1px solid rgba($knockout-color, 0.14); 
-			border-radius: 5px;
-
-			legend {
-				background: transparent;
-			}
+		small {
+			color: $brand-warning-color;
+			font-size: 80%;
 		}
 
-		label {
-			display: block;
-			font-family: 'Roboto', Sans-Serif;
-			font-size: .9rem;
-			font-weight: bold;
-			line-height: 1.5;
-			margin-bottom: 5px;
-
-			small {
-				color: $brand-warning-color;
-				font-size: 80%;
-			}
-
-			&.oneblock-label {
-				color: inherit;
-				cursor: default;
-				font-style: italic;
-				font-weight: normal;
-			}
+		&.oneblock-label {
+			color: inherit;
+			cursor: default;
+			font-style: italic;
+			font-weight: normal;
 		}
+	}
 
-		input {
-			@include transition(all .25s);
+	input {
+		@include transition(all .25s);
 
-			&[type="text"], &[type="password"], &[type="email"], &[type="date"], &[type="datetime"], &[type="month"], &[type="day"], &[type="number"], &[type="color"], &[type="url"] {
-				border: 1px solid rgba($knockout-color, .2); 
-				border-radius: 0;
-				padding: 5px;
-				width: 100%;
-
-				&:focus {
-					box-shadow: 0 0 3px 0 rgba($knockout-color, .12);
-				}
-			}
-
-			&[type="submit"], &[type="reset"] {
-				cursor: pointer;
-			}
-		}
-
-		select {
-			&[multiple] {
-				height: auto;
-			}
-		}
-
-		small, .error small {
-			&.error {
-				font-size: 0.82rem;
-				font-style: normal;
-				font-weight: bold;
-				background-color: $brand-danger-color;
-
-			}
-		} 
-
-		textarea {
+		&[type="text"], &[type="password"], &[type="email"], &[type="date"], &[type="datetime"], &[type="month"], &[type="day"], &[type="number"], &[type="color"], &[type="url"] {
 			border: 1px solid rgba($knockout-color, .2); 
+			border-radius: 0;
 			padding: 5px;
 			width: 100%;
 
@@ -148,173 +112,212 @@ $oneblock-height: 40px !default;
 			}
 		}
 
-		ul, .error ul {
-			&.errors {
-				background-color: $brand-danger-color;
-				border: 1px solid rgba($brand-danger-color, .8);
-				margin-left: 0;
-				margin-bottom: 1rem;
-				padding-left: 1.35rem;
-				color : #fff;
-
-				li {
-					small {
-						&.error {
-							font-size: 0.82rem;
-							font-style: normal;
-							font-weight: bold;
-							margin-bottom: 0;
-							padding: 0.23rem;
-						}
-					}
-				}
-			}
+		&[type="submit"], &[type="reset"] {
+			cursor: pointer;
 		}
+	}
 
-		input, select, textarea {
-			~ ul.errors {
-				border-radius: 0 0 3px 3px;
-			}
+	select {
+		&[multiple] {
+			height: auto;
 		}
+	}
 
-		button, .btn {
-			font-size: 85%;
+	small, .error small {
+		&.error {
+			font-size: 0.82rem;
+			font-style: normal;
+			font-weight: bold;
+			background-color: $brand-danger-color;
+
 		}
+	} 
 
-		div {
-			&.actions {
-				border-top: 1px dotted rgba($knockout-color, .08);
-				margin-top: 0.65rem;
-				padding-top: 1rem;
-			}
+	textarea {
+		border: 1px solid rgba($knockout-color, .2); 
+		padding: 5px;
+		width: 100%;
 
-			&.field {}
+		&:focus {
+			box-shadow: 0 0 3px 0 rgba($knockout-color, .12);
 		}
+	}
 
-		.alert {
-			margin-bottom: 20px;
-		}
-
-		.checkbox {
-			label {
-			}
-
-			input {
-				border: 1px solid rgba($knockout-color, .2); 
-				border-radius: 0;
-				position: relative;
-				margin: 0;
-				top: 3px;
-			}
-		}
-		
-		.form-control {
-			border-radius: 0;
-			@include transition(all .25s);
-
-			&:focus {
-				border-color: rgba($secondary-color, .235);
-				@include box-shadow(0 0 3px 0 rgba($knockout-color, .05));
-				outline: none;
-			}
-		}
-
-		.form-group {
+	ul, .error ul {
+		&.errors {
+			background-color: $brand-danger-color;
+			border: 1px solid rgba($brand-danger-color, .8);
 			margin-left: 0;
-			margin-right: 0;
-			padding: 5px 0;
+			margin-bottom: 1rem;
+			padding-left: 1.35rem;
+			color : #fff;
 
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		.oneblock {
-			display: block;
-			min-height: $oneblock-height;
-			text-align: center;
-			width: 100%; 
-			@include clearfix();
-
-			// > * {
-			// 	display: block;
-			// 	float: left;
-			// 	height: 100%;
-			// 	width: auto;
-			// }
-
-			input, select, .select2-container {
-				@extend %input-special;
-				font-family: 'Roboto Light', Sans-Serif;
-				height: $oneblock-height;
-				// width: 35%; // controlled by foundation column wrap
-				
-				&:focus {
-					background: rgba(#f5f5f5, .93);
-					@include box-shadow(0 0 3px 0 rgba(#000, .02));
-				}
-
-				&[type="submit"] {
-					background: $secondary-color;
-					color: #fff;
-					font-family: 'Roboto', Sans-Serif;
-					padding: 0 5px;
-					width: 100%;
-					// width: 20%; // controlled by foundation column wrap
-
-					&:hover {
-						background-color: $primary-color;
+			li {
+				small {
+					&.error {
+						font-size: 0.82rem;
+						font-style: normal;
+						font-weight: bold;
+						margin-bottom: 0;
+						padding: 0.23rem;
 					}
 				}
+			}
+		}
+	}
 
-				&.select2-container {
-					@extend %select2-basic;
+	input, select, textarea {
+		~ ul.errors {
+			border-radius: 0 0 3px 3px;
+		}
+	}
 
-					.select2-selection {
-						height: $oneblock-height;
-						padding: 0 7px;
+	button, .btn {
+		font-size: 85%;
+	}
 
-						.select2-selection__rendered {
-							overflow: auto;
-							height: 100%;
-							position: relative;
-							@include clearfix;
+	div {
+		&.actions {
+			border-top: 1px dotted rgba($knockout-color, .08);
+			margin-top: 0.65rem;
+			padding-top: 1rem;
+		}
 
-							.select2-search--inline {
-								.select2-search__field {
-									margin: 0;
-								}
+		&.field {}
+	}
+
+	.alert {
+		margin-bottom: 20px;
+	}
+
+	.checkbox {
+		label {
+		}
+
+		input {
+			border: 1px solid rgba($knockout-color, .2); 
+			border-radius: 0;
+			position: relative;
+			margin: 0;
+			top: 3px;
+		}
+	}
+	
+	.form-control {
+		border-radius: 0;
+		@include transition(all .25s);
+
+		&:focus {
+			border-color: rgba($secondary-color, .235);
+			@include box-shadow(0 0 3px 0 rgba($knockout-color, .05));
+			outline: none;
+		}
+	}
+
+	.form-group {
+		margin-left: 0;
+		margin-right: 0;
+		padding: 5px 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.oneblock {
+		display: block;
+		min-height: $oneblock-height;
+		text-align: center;
+		width: 100%; 
+		@include clearfix();
+
+		// > * {
+		// 	display: block;
+		// 	float: left;
+		// 	height: 100%;
+		// 	width: auto;
+		// }
+
+		input, select, .select2-container {
+			@extend %input-special;
+			font-family: 'Roboto Light', Sans-Serif;
+			height: $oneblock-height;
+			// width: 35%; // controlled by foundation column wrap
+			
+			&:focus {
+				background: rgba(#f5f5f5, .93);
+				@include box-shadow(0 0 3px 0 rgba(#000, .02));
+			}
+
+			&[type="submit"] {
+				background: $secondary-color;
+				color: #fff;
+				font-family: 'Roboto', Sans-Serif;
+				padding: 0 5px;
+				width: 100%;
+				// width: 20%; // controlled by foundation column wrap
+
+				&:hover {
+					background-color: $primary-color;
+				}
+			}
+
+			&.select2-container {
+				@extend %select2-basic;
+
+				.select2-selection {
+					height: $oneblock-height;
+					padding: 0 7px;
+
+					.select2-selection__rendered {
+						overflow: auto;
+						height: 100%;
+						position: relative;
+						@include clearfix;
+
+						.select2-search--inline {
+							.select2-search__field {
+								margin: 0;
 							}
+						}
 
-							.select2-selection__choice {
-								background: $primary-color;
-								border-color: darken($primary-color, 9%);
-							}
+						.select2-selection__choice {
+							background: $primary-color;
+							border-color: darken($primary-color, 9%);
 						}
 					}
 				}
 			}
-
-			label {
-
-				&.mid {
-					background: #fff;
-					color: $secondary-color;
-					cursor: default;
-					line-height: $oneblock-height;
-					margin: 0;
-					//padding: 0 20px;
-					font-style: normal;
-					text-align: center;
-					text-transform: uppercase;
-					// width: 10%; // controlled by foundation column wrap
-				}
-			}
-		} 
-
-		.v-space {
-			padding: .265rem 0;
 		}
+
+		label {
+
+			&.mid {
+				background: #fff;
+				color: $secondary-color;
+				cursor: default;
+				line-height: $oneblock-height;
+				margin: 0;
+				//padding: 0 20px;
+				font-style: normal;
+				text-align: center;
+				text-transform: uppercase;
+				// width: 10%; // controlled by foundation column wrap
+			}
+		}
+	} 
+
+	.v-space {
+		padding: .265rem 0;
+	}
+}
+
+
+@include define("form") {
+	/* Form */
+	
+	form {
+		@extend %form-internals;
 	}
 
 	[class*="select2-container"] {
