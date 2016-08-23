@@ -365,7 +365,7 @@ $topbar-color:	$gray-dark !default;
 				}
 
 				&.dropdown, &.dropdown-menu, &.submenu {
-					background-color: rgba(#000, .84);
+					background-color: rgba(#151515, 0.9);
 					@include box-shadow(0 0 5px 0 rgba(#000, .5));
 
 					a {
@@ -398,7 +398,7 @@ $topbar-color:	$gray-dark !default;
 					&.submenu {
 						li {
 							&:not(:last-child) {
-								border-bottom: 1px dashed rgba($knockout-color, 1.73);
+								// border-bottom: 1px dashed rgba($knockout-color, 1.73);
 							}
 						}
 					}

@@ -345,7 +345,12 @@ $oneblock-height: 40px !default;
 		&.select2-container--focus {
 			.select2-selection {
 				// background: rgba(#f5f5f5, .93);
+				border-color: rgba($secondary-color, .235);
 				@include box-shadow(0 0 3px 0 rgba(#000, .02));
+			}
+
+			.select2-selection--multiple {
+				border-color: rgba($secondary-color, .235);
 			}
 		}
 	}
