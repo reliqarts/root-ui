@@ -81,62 +81,62 @@ $elements: () !default;
 // Spaces
 // Generate space classes (padding and margin)
 @mixin spaces($max: 100, $rem-point: 11) {
-	@for $sp from 0 to $max {
+    @for $sp from 0 to $max {
 
-		// fiddle unit
-		$space-value: $sp * 1rem;
-		@if ($space-value >= ($rem-point * 1rem)) {
-			$space-value: rem-calc($sp * 1px);
-		}
+        // fiddle unit
+        $space-value: $sp * 1rem;
+        @if ($space-value >= ($rem-point * 1rem)) {
+            $space-value: rem-calc($sp * 1px);
+        }
 
-		// padding
-		.bp-#{$sp}, .pb-#{$sp} {
-	        padding-bottom: #{$space-value};
-	    }
-	    .tp-#{$sp}, .pt-#{$sp} {
-	        padding-top: #{$space-value};
-	    }
-	    .lp-#{$sp}, .pl-#{$sp} {
-	        padding-left: #{$space-value};
-	    }
-	    .rp-#{$sp}, .pr-#{$sp} {
-	        padding-right: #{$space-value};
-	    }
-	    .vp-#{$sp}, .pv-#{$sp} {
-	        padding-bottom: #{$space-value};
-	        padding-top: #{$space-value};
-	    }
-	    .hp-#{$sp}, .ph-#{$sp} {
-	        padding-left: #{$space-value};
-	        padding-right: #{$space-value};
-	    }
-	    .p-#{$sp} {
-	        padding: #{$space-value};
-	    }
+        // padding
+        .bp-#{$sp}, .pb-#{$sp} {
+            padding-bottom: #{$space-value} !important;
+        }
+        .tp-#{$sp}, .pt-#{$sp} {
+            padding-top: #{$space-value} !important;
+        }
+        .lp-#{$sp}, .pl-#{$sp} {
+            padding-left: #{$space-value} !important;
+        }
+        .rp-#{$sp}, .pr-#{$sp} {
+            padding-right: #{$space-value} !important;
+        }
+        .vp-#{$sp}, .pv-#{$sp} {
+            padding-bottom: #{$space-value} !important;
+            padding-top: #{$space-value} !important;
+        }
+        .hp-#{$sp}, .ph-#{$sp} {
+            padding-left: #{$space-value} !important;
+            padding-right: #{$space-value} !important;
+        }
+        .p-#{$sp} {
+            padding: #{$space-value} !important;
+        }
 
-	    // margin
-		.bm-#{$sp}, .mb-#{$sp} {
-	        margin-bottom: #{$space-value};
-	    }
-	    .tm-#{$sp}, .mt-#{$sp} {
-	        margin-top: #{$space-value};
-	    }
-	    .lm-#{$sp}, .ml-#{$sp} {
-	        margin-left: #{$space-value};
-	    }
-	    .rm-#{$sp}, .mr-#{$sp} {
-	        margin-right: #{$space-value};
-	    }
-	    .vm-#{$sp}, .mv-#{$sp} {
-	        margin-bottom: #{$space-value};
-	        margin-top: #{$space-value};
-	    }
-	    .hm-#{$sp}, .mh-#{$sp} {
-	        margin-left: #{$space-value};
-	        margin-right: #{$space-value};
-	    }
-	    .m-#{$sp} {
-	        margin: #{$space-value};
-	    }
-	}
+        // margin
+        .bm-#{$sp}, .mb-#{$sp} {
+            margin-bottom: #{$space-value} !important;
+        }
+        .tm-#{$sp}, .mt-#{$sp} {
+            margin-top: #{$space-value} !important;
+        }
+        .lm-#{$sp}, .ml-#{$sp} {
+            margin-left: #{$space-value} !important;
+        }
+        .rm-#{$sp}, .mr-#{$sp} {
+            margin-right: #{$space-value} !important;
+        }
+        .vm-#{$sp}, .mv-#{$sp} {
+            margin-bottom: #{$space-value} !important;
+            margin-top: #{$space-value} !important;
+        }
+        .hm-#{$sp}, .mh-#{$sp} {
+            margin-left: #{$space-value} !important;
+            margin-right: #{$space-value} !important;
+        }
+        .m-#{$sp} {
+            margin: #{$space-value} !important;
+        }
+    }
 }
